@@ -16,6 +16,7 @@ var VERSION = '0.1.0',
 
 	options = {
 		base : './',
+		skipSpm : false,
 		baseModInfo : {
 			"root" : "#",
 			"dist" : "./dist",
@@ -54,15 +55,23 @@ function buildModule() {
 		fileExp = new RegExp(options.baseModInfo['with-debug'] + '\\.js$','ig')
 		;
 
-	//spmbuild.run(options, function(err) {
+	function rewrite(err) {
 		var files = fs.readdirSync(distDir).slice();
 
 		Object.each(files, function(file) {
 			if (file.match(fileExp)) {
-				rewriteSyntax(path.join(distDir, file));
+				process.nextTick(function() {
+					rewriteSyntax(path.join(distDir, file));	
+				});
 			}
 		});
-	//});
+	}
+
+	if (!options.skipSpm) {
+		spmbuild.run(options, rewrite);
+	} else {
+		rewrite();
+	}
 }
 
 function rewriteSyntax(jsfile) {
@@ -179,6 +188,9 @@ function main(args) {
 			switch(v) {
 				case '--nolog':
 					options.log = false;
+					break;
+				case '--skip-spm':
+					options.skipSpm = true;
 					break;
 				case '-v':
 				case '--version':
