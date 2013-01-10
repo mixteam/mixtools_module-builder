@@ -1,0 +1,1 @@
+_module=_modules['{{id}}']={exports:{}};_exports=_module.exports={{func}};if(typeof _exports==='function'){_module.exports=(_exports)(null, _exports, _module)||_module.exports;}

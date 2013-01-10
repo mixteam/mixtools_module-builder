@@ -1,0 +1,30 @@
+{
+    "name" : "module-builder",
+    "description" : "module builder",
+	"version" : "0.1.0",
+    "author" : "zhuxun <zhuxun.jb@taobao.com>",
+	"keywords": [
+		"module",
+		"builder"
+	],
+	"engines": {
+		"node": ">= 0.8.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:mixteam/mixtools_module-builder.git"
+	},
+	"dependencies" : {
+		"spm" : "1.5.x",
+		"esprima" : "1.0.2",
+		"escodegen" : "0.0.x",
+		"uglify-js" : "2.2.3"
+	},
+    "main" : "./src/module-build.js",
+	"bin": {
+        "modb": "./src/module-build.js"
+	},
+	"readme": "CMD模块编译器",
+	"_id": "module-builder@0.1.0",
+	"_from": "module-builder"
+}
