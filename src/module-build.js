@@ -1,6 +1,3 @@
-#!/usr/bin/env node
-// -*- js -*-
-
 require('./reset');
 
 var VERSION = '0.1.0',
