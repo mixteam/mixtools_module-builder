@@ -3,7 +3,7 @@
 
 require('./reset');
 
-var VERSION = '0.1.0',
+var VERSION = '0.1.1',
 	path = require('path'),
 	util = require('util'),
 	fs = require('fs'),

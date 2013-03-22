@@ -1,7 +1,7 @@
 {
     "name" : "module-builder",
     "description" : "module builder",
-	"version" : "0.1.0",
+	"version" : "0.1.1",
     "author" : "zhuxun <zhuxun.jb@taobao.com>",
 	"keywords": [
 		"module",
@@ -25,6 +25,6 @@
         "modb": "./src/module-build.js"
 	},
 	"readme": "CMD模块编译器",
-	"_id": "module-builder@0.1.0",
+	"_id": "module-builder@0.1.1",
 	"_from": "module-builder"
 }
